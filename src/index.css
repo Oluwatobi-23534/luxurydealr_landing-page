@@ -1,0 +1,72 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap'); */
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+html {
+  scroll-behavior: smooth;
+}
+/* /* body {
+  font-family: 'Open Sans', sans-serif;
+} */
+
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+}  */
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;700&display=swap');
+
+
+body {
+  font-family: 'Dosis', sans-serif;
+}
+
+.input-box-shadow {
+  filter: drop-shadow(-4px -4px 44px rgba(0, 0, 0, 0.08));
+} */
+
+body {
+  font-family: 'Times Sans Serif', serif;
+}
+
+
+
+
+
+.product-list {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 100px;
+  background-color: #007BFF; /* A nice shade of blue */
+  color: #FFFFFF; /* White text to contrast with the blue background */
+}
+
+.subcategory {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+.meeting-form {
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
