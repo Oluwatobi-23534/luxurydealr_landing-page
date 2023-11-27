@@ -201,7 +201,7 @@ const OrderDetails = () => {
               onChange={handleInputChange}
               required
               className="rounded border border-solid border-slate-100 shadow-lg block px-5 py-2 w-full"
-              placeholder="Enter your email number here..."
+              placeholder="Enter your email address here..."
             />
           </label>
           <label className="mb-2 block text-2xl font-medium text-blue-500">
