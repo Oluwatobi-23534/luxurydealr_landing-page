@@ -54,26 +54,26 @@ const Navbar = () => {
       >
         <ul>
           <li className="p-4 hover:bg-gray-100">
-            <HashLink to="/#top">Home</HashLink>
+            <HashLink onClick={handleClick} to="/#top">Home</HashLink>
           </li>
           <li className="p-4 hover:bg-gray-100">
-            <HashLink smooth to="/#about">
+            <HashLink onClick={handleClick} smooth to="/#about">
               About
             </HashLink>
           </li>
           <li className="p-4 hover:bg-gray-100">
-            <HashLink to="/products#products-top">Products</HashLink>
+            <HashLink onClick={handleClick} to="/products#products-top">Products</HashLink>
           </li>
           <li className="p-4 hover:bg-gray-100">
-            <HashLink to="/order#order-top">Order</HashLink>
+            <HashLink onClick={handleClick} to="/order#order-top">Order</HashLink>
           </li>
           <li className="p-4 hover:bg-gray-100">
-            <HashLink smooth to="/#delivery">
+            <HashLink onClick={handleClick} smooth to="/#delivery">
               Delivery
             </HashLink>
           </li>
           <li className="p-4 hover:bg-gray-100">
-            <HashLink smooth to="/#meeting">
+            <HashLink onClick={handleClick} smooth to="/#meeting">
               Contact Us
             </HashLink>
           </li>
