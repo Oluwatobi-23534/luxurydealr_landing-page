@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleClick = () => setToggle(!toggle);
 
   return (
-    <div className="w-full lg:fixed h-[80px] bg-white border-b">
+    <div className="w-full lg:fixed h-[80px] bg-white border-b z-50">
       <div className="lg:max-w-[1480px] max-w-[600px] m-auto w-full h-full flex justify-between items-center">
         <h1 className="text-blue-500 font-semibold text-3xl h-[25px]">
           <HashLink to="/#top">LUXURY DEALR</HashLink>
@@ -54,7 +54,9 @@ const Navbar = () => {
       >
         <ul>
           <li className="p-4 hover:bg-gray-100">
-            <HashLink onClick={handleClick} to="/#top">Home</HashLink>
+            <HashLink onClick={handleClick} to="/#top">
+              Home
+            </HashLink>
           </li>
           <li className="p-4 hover:bg-gray-100">
             <HashLink onClick={handleClick} smooth to="/#about">
@@ -62,10 +64,14 @@ const Navbar = () => {
             </HashLink>
           </li>
           <li className="p-4 hover:bg-gray-100">
-            <HashLink onClick={handleClick} to="/products#products-top">Products</HashLink>
+            <HashLink onClick={handleClick} to="/products#products-top">
+              Products
+            </HashLink>
           </li>
           <li className="p-4 hover:bg-gray-100">
-            <HashLink onClick={handleClick} to="/order#order-top">Order</HashLink>
+            <HashLink onClick={handleClick} to="/order#order-top">
+              Order
+            </HashLink>
           </li>
           <li className="p-4 hover:bg-gray-100">
             <HashLink onClick={handleClick} smooth to="/#delivery">
