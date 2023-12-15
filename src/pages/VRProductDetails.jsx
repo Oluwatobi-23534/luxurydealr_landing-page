@@ -79,10 +79,10 @@ const vrHeadsets = [
 const VRProductDetails = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-50 pt-28">
-      <h1 className="text-4xl font-bold mb-4 border-4 border-blue-500 rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 text-white p-2 shadow-lg">
+      <h1 className="text-4xl font-bold mt-4 border-4 border-blue-500 rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 text-white p-2 shadow-lg">
         VR Headsets
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-4xl p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 w-full max-w-8xl mb-6 p-12">
         {vrHeadsets.map((headset, index) => (
           <div
             key={index}
