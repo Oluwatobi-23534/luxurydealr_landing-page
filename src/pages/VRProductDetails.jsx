@@ -84,12 +84,10 @@ const VRProductDetails = () => {
       <iframe
         title="Promo Video"
         frameBorder="0"
-        width="100%"
-        height="100%"
         src="https://promo.com/embed/6579f3c85f5db859c2745b22?ratioAspect=square&type=preview"
         allowFullScreen={true}
-        className="my-4 w-1/2 sm:w-3/8 md:w-1/4 lg:w-1/3 xl:w-1/4 mx-auto rounded-lg shadow-lg overflow-hidden p-2 sm:p-4"
-        style={{ aspectRatio: "1" }}
+        className="my-4 w-3/4 sm:w-2/3 md:w-1/2 lg:w-2/3 xl:w-1/2 mx-auto rounded-lg shadow-lg overflow-hidden p-2 sm:p-4"
+        style={{ aspectRatio: "16/9" }}
       ></iframe>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 w-full max-w-8xl mb-6 p-12">
