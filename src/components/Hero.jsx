@@ -7,7 +7,7 @@ import Meeting from "./Meeting";
 
 const Hero = () => {
   return (
-    <div id="top" className="w-full bg-white p-6 py-24">
+    <div id="top" className="w-full bg-white p-6 py-24 flex-1">
       <div className="lg:max-w-[1480px] m-auto grid lg:grid-cols-2 max-w-[600px]">
         <div className="flex flex-col justify-start gap-4">
           <p className="py-2 text-3xl text-[#3b82f6] font-medium">

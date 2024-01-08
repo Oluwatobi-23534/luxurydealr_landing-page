@@ -1,24 +1,40 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { SignOutButton, SignedIn } from "@clerk/clerk-react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProductList from "./components/ProductList";
-
 import OrderDetails from "./components/OrderDetails";
 import Home from "./components/Hero";
 import VRProductDetails from "./pages/VRProductDetails";
-
+import HomeElectronicsDetails from "./pages/HomeElectronicsDetails";
 
 const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/order" element={<OrderDetails />} />
-        <Route path="/category/vr-products" element={<VRProductDetails />} /> 
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductList />} />
+            <Route
+              path="/category/vr-products"
+              element={<VRProductDetails />}
+            />
+            <Route
+              path="/category/electronics"
+              element={<HomeElectronicsDetails />} 
+            />
+          </Routes>
+          <SignedIn>
+            <SignOutButton afterSignOutUrl="/" />
+            <Routes>
+              <Route path="/order" element={<OrderDetails />} />
+            </Routes>
+          </SignedIn>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 };

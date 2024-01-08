@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import { email, linkedin, facebook, instagram } from "../assets";
 
 const Footer = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <footer className="bg-blue-800 text-white p-6 shadow-lg">
       <div className="container mx-auto">
@@ -25,9 +28,16 @@ const Footer = () => {
               <li>
                 <HashLink to="/products#products-top">Products</HashLink>
               </li>
-              <li>
-                <HashLink to="/order#order-top">Order</HashLink>
-              </li>
+              <SignedIn>
+                <li>
+                  <HashLink to="/order#order-top">Order</HashLink>
+                </li>
+              </SignedIn>
+              <SignedOut>
+                <li>
+                  <button onClick={() => setShowModal(true)}>Order</button>
+                </li>
+              </SignedOut>
               <li>
                 <HashLink smooth to="/#delivery">
                   Delivery
@@ -41,10 +51,18 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <a href="https://www.facebook.com/TheLuxuryDealr?mibextid=LQQJ4d" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/TheLuxuryDealr?mibextid=LQQJ4d"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={facebook} alt="Facebook" width="24" height="24" />
             </a>
-            <a href="https://www.linkedin.com/company/the-luxury-dealr/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.linkedin.com/company/the-luxury-dealr/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={linkedin} alt="LinkedIn" width="24" height="24" />
             </a>
             <a
@@ -61,20 +79,32 @@ const Footer = () => {
             >
               <img src={email} alt="Email" width="24" height="24" />
             </a>
-
-            {/* Add more social media links as needed */}
           </div>
         </div>
 
         <div className="mt-4 flex justify-between items-center">
           <div>
             <p>
-              &copy; {new Date().getFullYear()} LUXURY DEALR. All rights
-              reserved.
+              © {new Date().getFullYear()} LUXURY DEALR. All rights reserved.
             </p>
           </div>
         </div>
       </div>
+      {showModal && (
+        <div className="fixed top-0 right-0 mt-4 mr-4 z-50">
+          <div className="bg-blue-200 p-4 rounded shadow-lg">
+            <p className="text-blue-900">
+              You must be signed in to place an order.
+            </p>
+            <button
+              onClick={() => setShowModal(false)}
+              className="text-red-500 hover:text-red-700"
+            >
+              ✕ {/* This is a "close" icon (a multiplication sign) */}
+            </button>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };

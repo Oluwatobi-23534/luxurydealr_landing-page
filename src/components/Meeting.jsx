@@ -23,6 +23,13 @@ const Meeting = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if all fields are filled
+    if (!name || !email || !phone || !message) {
+      alert("Please fill in all fields.");
+      setIsLoading(false);
+      return;
+    }
     setIsLoading(true);
 
     // emailjs IDs
