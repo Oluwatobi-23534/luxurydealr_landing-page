@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { SignOutButton, SignedIn } from "@clerk/clerk-react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProductList from "./components/ProductList";
@@ -23,15 +22,13 @@ const App = () => {
             />
             <Route
               path="/category/electronics"
-              element={<HomeElectronicsDetails />} 
+              element={<HomeElectronicsDetails />}
             />
           </Routes>
-          <SignedIn>
-            <SignOutButton afterSignOutUrl="/" />
-            <Routes>
-              <Route path="/order" element={<OrderDetails />} />
-            </Routes>
-          </SignedIn>
+
+          <Routes>
+            <Route path="/order" element={<OrderDetails />} />
+          </Routes>
         </div>
         <Footer />
       </div>
