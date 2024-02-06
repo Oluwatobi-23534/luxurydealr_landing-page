@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
-import { SignedIn, SignedOut } from "@clerk/clerk-react";
 
 const DeliveryDetails = () => {
   const [showModal, setShowModal] = useState(false);
@@ -30,24 +29,13 @@ const DeliveryDetails = () => {
           need assistance at any stage.
         </li>
       </ol>
-      <SignedIn>
-        <HashLink
-          smooth
-          to="/order#order-top"
-          className="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-800 transition-colors duration-300"
-        >
-          Place your order now
-        </HashLink>
-      </SignedIn>
-      <SignedOut>
-        <button
-          onClick={() => setShowModal(true)}
-          className="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-800 transition-colors duration-300"
-        >
-          Place your order now
-        </button>
-      </SignedOut>
-      {showModal && (
+      <button
+        onClick={() => setShowModal(true)}
+        className="bg-blue-900 text-white py-2 px-4 rounded hover:bg-blue-800 transition-colors duration-300"
+      >
+        Place your order now
+      </button>
+      {/* {showModal && (
         <div className="fixed top-0 right-0 mt-4 mr-4 z-50">
           <div className="bg-blue-200 p-4 rounded shadow-lg">
             <p className="text-blue-900">
@@ -58,10 +46,10 @@ const DeliveryDetails = () => {
               className="text-red-500 hover:text-red-700"
             >
               ✕ {/* This is a "close" icon (a multiplication sign) */}
-            </button>
+            {/* </button>
           </div>
         </div>
-      )}
+      )} */} 
     </div>
   );
 };

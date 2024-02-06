@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { HashLink } from "react-router-hash-link";
-import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import { email, linkedin, facebook, instagram } from "../assets";
 
 const Footer = () => {
@@ -28,16 +27,9 @@ const Footer = () => {
               <li>
                 <HashLink to="/products#products-top">Products</HashLink>
               </li>
-              <SignedIn>
-                <li>
-                  <HashLink to="/order#order-top">Order</HashLink>
-                </li>
-              </SignedIn>
-              <SignedOut>
-                <li>
-                  <button onClick={() => setShowModal(true)}>Order</button>
-                </li>
-              </SignedOut>
+              <li>
+                <button onClick={() => setShowModal(true)}>Order</button>
+              </li>
               <li>
                 <HashLink smooth to="/#delivery">
                   Delivery
